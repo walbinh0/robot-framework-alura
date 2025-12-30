@@ -25,7 +25,7 @@ Verificar se ao preencher os campos do formulário corretamente os dados são in
     E clique no botão criar card 
     Então identificar o card no time esperado
 
-    *** Keywords ***
+*** Keywords ***
 
 Dado que preencha os campos do formulário
     Input Text    ${CAMPO_NOME}  Akemi
