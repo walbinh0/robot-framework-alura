@@ -19,4 +19,4 @@ Dado que eu clique no botão "Criar Card"
 Então sistema deve apresentar mensagem de campo obrigatório
     Element Should Be Visible    id:form-nome-erro
     Element Should Be Visible    id:form-cargo-erro
-    Element Should Be Visible    id:form-times-erro
+    Element Should Be Visible    id:form-times-erro 
