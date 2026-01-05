@@ -1,5 +1,6 @@
 *** Settings ***
-Resource         ../main.robot
+Library  SeleniumLibrary
+Library  FakerLibrary  locale=pt_BR
 
 *** Variables ***
 ${CAMPO_NOME}      id:form-nome
@@ -19,11 +20,11 @@ ${BOTAO_CARD}      id:form-botao
 
 *** Keywords ***
 Dado que eu preencha os campos do formulário
-    ${Nome}          Generate First Name
+    ${Nome}          First Name
     Input Text       ${CAMPO_NOME}       ${Nome}
-    ${Cargo}         Generate Job    
+    ${Cargo}         Job    
     Input Text       ${CAMPO_CARGO}      ${Cargo} 
-    ${Imagem}        Generate Image Url    
+    ${Imagem}        Image Url    
     Input Text       ${CAMPO_IMAGEM}     ${Imagem}
     Click Element    ${CAMPO_TIME}
     Click Element    ${selecionar_time}[0]
@@ -35,7 +36,7 @@ Então identificar o card no time esperado
     Element Should Be Visible    class:colaborador
 
 Então identificar 3 cards no time esperado
-    FOR    ${i}    IN RANGE    1     3       
+    FOR    ${i}    IN RANGE    1     4       
         Dado que eu preencha os campos do formulário
         E clique no botão "Criar Card"
     END
@@ -43,11 +44,11 @@ Então identificar 3 cards no time esperado
 
 Então criar card e identificar 1 card em cada time disponível
     FOR    ${indice}    ${time}    IN ENUMERATE    @{selecionar_time}
-        ${Nome}          Generate First Name
+        ${Nome}          First Name
         Input Text       ${CAMPO_NOME}       ${Nome}
-        ${Cargo}         Generate Job    
+        ${Cargo}         Job    
         Input Text       ${CAMPO_CARGO}      ${Cargo} 
-        ${Imagem}        Generate Image Url    
+        ${Imagem}        Image Url    
         Input Text       ${CAMPO_IMAGEM}     ${Imagem}
         Click Element    ${CAMPO_TIME}
         Click Element    ${time}

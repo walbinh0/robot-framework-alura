@@ -1,5 +1,5 @@
 *** Settings ***
-Resource  ../main.robot
+Library  SeleniumLibrary
 
 *** Keywords ***
 Dado que eu acesse o Organo
